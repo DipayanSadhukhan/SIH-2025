@@ -11,7 +11,6 @@ const Login_Ragister = (p) => {
     const { login } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const murl = "https://sih-2025-server-y4pi.onrender.com"
 
   const [isLoginForm, setIsLoginForm] = useState(location.pathname === '/login');
 
@@ -50,7 +49,7 @@ const Login_Ragister = (p) => {
     e.preventDefault();
     if (isLoginForm) {
       try {
-        const url = `${murl}/api/auth/login`;
+        const url = 'http://localhost:3000/api/auth/login';
         const response = await axios.post(url, loginInfo);
         if (response.status === 200) {
           successToast('Login successful !');
@@ -70,7 +69,7 @@ const Login_Ragister = (p) => {
         return;
       }
       try {
-        const url = `${murl}/api/auth/ragister`;
+        const url = 'http://localhost:3000/api/auth/ragister';
         const response = await axios.post(url, ragistarInfo);
         if (response.status === 201) {
           successToast('Registration successful !');

@@ -3,7 +3,6 @@ import axios from 'axios';
 import { errorToast, infoToast } from '../components/toast';
 
 const AuthContext = createContext();
-const murl = "https://sih-2025-server-y4pi.onrender.com"
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -31,7 +30,7 @@ export const AuthProvider = ({ children }) => {
       const currentToken = localStorage.getItem('token');
       
       await axios.post(
-        `${murl}/api/auth/logout`,
+        'http://localhost:3000/api/auth/logout',
         {},
         {
           headers: {
