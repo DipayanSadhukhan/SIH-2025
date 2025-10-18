@@ -1,0 +1,16 @@
+import { BrowserRouter} from 'react-router-dom';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { AuthProvider } from './context/AuthContext.jsx';
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <BrowserRouter basename="/SIH-2025">
+    <StrictMode>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </StrictMode>
+  </BrowserRouter>
+)

@@ -1,0 +1,58 @@
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jersey-20-regular {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.akshar {
+  font-family: "Akshar", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fade-left{
+  animation: fade-left 900ms ease-in-out;
+}
+
+.fade-right{
+  animation: fade-right 1s ease-in-out;
+}
+
+.fade-in{
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-left {
+  from{
+    transform: translateX(-30%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from{
+    transform: translateX(30%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
