@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { errorToast, infoToast } from '../components/toast';
 
+const API_BASE_URL = 'http://localhost:3000';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }) => {
       const currentToken = localStorage.getItem('token');
       
       await axios.post(
-        'http://localhost:3000/api/auth/logout',
+        `${API_BASE_URL}/api/auth/logout`,
         {},
         {
           headers: {

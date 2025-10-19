@@ -6,6 +6,8 @@ import { successToast, errorToast } from '../components/toast';
 import {useAuth} from '../context/AuthContext';
 import axios from 'axios';
 
+const API_BASE_URL ='http://localhost:3000';
+
 
 const Login_Ragister = (p) => {
     const { login } = useAuth();
@@ -49,7 +51,7 @@ const Login_Ragister = (p) => {
     e.preventDefault();
     if (isLoginForm) {
       try {
-        const url = 'http://localhost:3000/api/auth/login';
+        const url = `${API_BASE_URL}/api/auth/login`;
         const response = await axios.post(url, loginInfo);
         if (response.status === 200) {
           successToast('Login successful !');
@@ -69,7 +71,7 @@ const Login_Ragister = (p) => {
         return;
       }
       try {
-        const url = 'http://localhost:3000/api/auth/ragister';
+        const url = `${API_BASE_URL}/api/auth/ragister`;
         const response = await axios.post(url, ragistarInfo);
         if (response.status === 201) {
           successToast('Registration successful !');
