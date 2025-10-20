@@ -2,7 +2,10 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { errorToast, infoToast } from '../components/toast';
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'https://sih-2025-3dpt.onrender.com';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {

@@ -6,7 +6,10 @@ import { successToast, errorToast } from '../components/toast';
 import {useAuth} from '../context/AuthContext';
 import axios from 'axios';
 
-const API_BASE_URL ='http://localhost:3000';
+const API_BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'https://sih-2025-3dpt.onrender.com';
 
 
 const Login_Ragister = (p) => {
