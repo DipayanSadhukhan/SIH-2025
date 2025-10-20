@@ -5,7 +5,7 @@ import { errorToast, infoToast } from '../components/toast';
 const API_BASE_URL =
   window.location.hostname === 'localhost'
     ? 'http://localhost:3000'
-    : 'https://sih-2025-3dpt.onrender.com';
+    : 'https://sih-2025-22r8.onrender.com';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
