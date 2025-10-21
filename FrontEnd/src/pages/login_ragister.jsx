@@ -95,7 +95,7 @@ const Login_Ragister = (p) => {
         <div className='bg-[#DAD9D1] w-[99%] min-h-[96vh] py-3 m-auto rounded-lg flex flex-col gap-3 justify-center items-center'>
           <Header />
 
-          <div className='bg-[url(login-bg-pc.jpg)] bg-no-repeat bg-center bg-cover w-[99%] rounded-lg grow'>
+          <div className='bg-[url("/login-bg-pc.jpg")] bg-no-repeat bg-center bg-cover w-[99%] rounded-lg grow'>
             <div onClick={() => {
               setIsLoginForm(prev => !prev);
               toggleFormAndNavigate();
