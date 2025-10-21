@@ -109,7 +109,7 @@ const Login_Ragister = (p) => {
 
             <div className='w-full'>
               <div className='mx-auto madimi-one-regular tracking-wider text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-sm sm:w-md md:w-xl lg:w-3xl fade-left'>WORLDS’ FIRST</div>
-              <div className='mx-auto madimi-one-regular tracking-wider text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-sm sm:w-md md:w-xl lg:w-3xl fade-right text-end text-[#948F8F]'>CARRER TRACKER !</div>
+              <div className='mx-auto madimi-one-regular tracking-wider text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-sm sm:w-md md:w-xl lg:w-3xl fade-right text-end text-[#948F8F]'>CAREER TRACKER !</div>
             </div>
 
             <div className='w-sm sm:w-md md:w-lg lg:w-xl min-h-96 py-5 bg-white/50 mx-auto fade-in rounded-xl shadow-2xl mt-6 mb-10 flex gap-3 flex-col items-center '>
