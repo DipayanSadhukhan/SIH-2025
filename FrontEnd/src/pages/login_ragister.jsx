@@ -55,7 +55,9 @@ const Login_Ragister = (p) => {
     if (isLoginForm) {
       try {
         const url = `${API_BASE_URL}/api/auth/login`;
-        const response = await axios.post(url, loginInfo);
+        const response = await axios.post(url, loginInfo,{
+          withCredentials: true
+        });
         if (response.status === 200) {
           successToast('Login successful !');
           login(response.data.token, response.data.user);

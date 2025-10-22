@@ -6,14 +6,12 @@ import authRoutes from './Routes/auth.routes.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import bodyParser from 'body-parser';
-// import { fileURLToPath } from 'url';
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 connectDB();
 
-// const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.resolve();
 
 app.use(cookieParser())
@@ -24,10 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth",authRoutes);
 
-// app.get('/', (req, res) => {
-//     res.send('API is running...');
-// });
-
 app.use(express.static(path.join(__dirname, 'FrontEnd', 'dist')));
 
 app.use((_, res) => {
@@ -35,5 +29,5 @@ app.use((_, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`app listening on port ${PORT}...`);
+    console.log(`Server is working on http://localhost:${PORT}`);
 });

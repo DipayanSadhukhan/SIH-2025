@@ -4,7 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Login_Ragister from './pages/login_ragister'
 import Home from './pages/home'
 import './App.css'
+import './style/NotFound.css'
 import { PrivateRoutes } from '../utils/ProtectedRoutes.jsx';
+import NotFound from './pages/notFound.jsx';
 
 const App = () => {
   return (
@@ -28,6 +30,7 @@ const App = () => {
         <Route path='/register' element={<Login_Ragister p={false} />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/home" element={<Home />} />
+          <Route path='*' element={<NotFound/>} />
         </Route>
       </Routes>
     </div>

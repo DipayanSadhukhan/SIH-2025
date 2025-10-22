@@ -89,13 +89,14 @@ export const login = async (req, res) => {
         res.cookie("token", jwtToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "strict",
+            sameSite: "Lax",
             maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         });
 
         res.status(200).json({ 
             message: "User logged in successfully",
-            user 
+            user,
+            jwtToken
         });
 
     } catch (error) {
@@ -105,6 +106,20 @@ export const login = async (req, res) => {
         });
     }
 };
+
+export const getUserDetails = async (req,res)=>{
+    try {
+        const token = req.cookies.token;
+        if (!token) {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.userId).select('-password');
+        res.status(200).json({ user });
+    } catch (error) {
+        return res.status(500).json({ message: "Server error", error: error.message });
+    }
+}
 
 
 export const logout = (req,res)=>{
