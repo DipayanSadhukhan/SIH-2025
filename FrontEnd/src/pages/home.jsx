@@ -34,9 +34,10 @@ const Home = () => {
           if (response.data.user) {
             setIsLoading(false);
             return;
+          }else{
+            navigate('/login');
           }
         } catch (error) {
-          console.log("Token verification failed:", error);
           navigate("/login");
         }
       } else {
