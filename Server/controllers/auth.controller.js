@@ -17,7 +17,7 @@ export const ragister = async (req, res) => {
 
     const userExists = await User.findOne({ email });
 
-    if (userExists.length) {
+    if (userExists) {
       return res.status(400).json({
         message: "User already exists",
       });
