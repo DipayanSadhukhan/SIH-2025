@@ -1,14 +1,16 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { ToastContainer , Bounce } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Login_Ragister from './pages/login_ragister'
-import Home from './pages/home'
-import './App.css'
-import { PrivateRoutes } from '../utils/ProtectedRoutes.jsx';
+import { Navigate, Route, Routes } from "react-router-dom";
+import { ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Login_Ragister from "./pages/login_ragister";
+import Home from "./pages/home";
+import "./App.css";
+import "./style/NotFound.css";
+import { PrivateRoutes } from "../utils/ProtectedRoutes.jsx";
+import NotFound from "./pages/notFound.jsx";
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className="App">
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -23,15 +25,16 @@ const App = () => {
         transition={Bounce}
       />
       <Routes>
-        <Route path='/' element={<Navigate to="/login" />} />
-        <Route path='/login' element={<Login_Ragister p={true} />} />
-        <Route path='/register' element={<Login_Ragister p={false} />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login_Ragister p={true} />} />
+        <Route path="/register" element={<Login_Ragister p={false} />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/home" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
