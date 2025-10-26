@@ -1,6 +1,6 @@
 ## Career Rasta
 
-- Website link: [Career Rasta](https://shubhrasankharoy.github.io/SIH-2025/)
+- Website link: [Career Rasta](https://sih-2025-22r8.onrender.com/)
 
 ### Steps
 
